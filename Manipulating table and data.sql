@@ -19,3 +19,12 @@ CourseName nvarchar(50) not null,
 NumberOfCredits int,
 CourseCode nvarchar(5) not null  --Example: CS201
 );
+
+-- TO INSERT DATA INTO TABLE
+use school;
+insert into Students ( firstname, lastname, dateofbirth, dateofjoining) values  --The Students table also includes id column but it is declared as auto increment by using identity key. so, there is no need to insert its values
+('Prasad','M S', 2000-06-27, 2022-04-23),    --The datetime should be in format of yyyy-mm-dd
+('Rohith', 'R', 2000-04-28, 2022-04-23),
+('Nithin', 'N', 2000-03-05, 2022-04-23),
+('Rajesh','k', 2000-06-13, null)              -- The dateofjoining can be null because, "not null" is not mentioned for this.
+                                              -- Finally it insets 4 rows.
