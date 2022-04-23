@@ -28,3 +28,8 @@ insert into Students ( firstname, lastname, dateofbirth, dateofjoining) values  
 ('Nithin', 'N', 2000-03-05, 2022-04-23),
 ('Rajesh','k', 2000-06-13, null)              -- The dateofjoining can be null because, "not null" is not mentioned for this.
                                               -- Finally it insets 4 rows.
+
+--SELECTING DATA FROM TABLE USING SQL SCRIPT
+use school;
+select * from Students;   -- It displays all rows and columms
+select firstname as 'First Name',lastname [Last Name],dateofbirth [Date of Birth] from Students;    -- In this we specify which column to display and which column to not. we can change title of the column using 'as' and [].
