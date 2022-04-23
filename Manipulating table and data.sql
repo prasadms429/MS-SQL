@@ -33,3 +33,23 @@ insert into Students ( firstname, lastname, dateofbirth, dateofjoining) values  
 use school;
 select * from Students;   -- It displays all rows and columms
 select firstname as 'First Name',lastname [Last Name],dateofbirth [Date of Birth] from Students;    -- In this we specify which column to display and which column to not. we can change title of the column using 'as' and [].
+
+
+-- Advanced Select queries
+SELECT * FROM school.dbo.Courses   -- Without using "use school" for selecting database, we can directly use this command.
+
+SELECT lastname, firstname, dateofbirth
+FROM school.dbo.Students
+WHERE firstname like '%h%'          -- To display the above mentioned details for all first names including charcter 'h' in it in the table.
+
+--Retrieve only Full Names of Students and their enrollment dates
+select firstname+' '+lastname [Full name], dateofbirth [Date of birth]
+from school.dbo.Students
+
+-- Select Courses with the number of credits greater than 2
+SELECT * FROM school.dbo.Courses
+WHERE NumberOfCredits>2;
+
+-- Select Courses with the number of credits 3 and less
+SELECT * FROM school.dbo.Courses
+WHERE NumberOfCredits<=3;
