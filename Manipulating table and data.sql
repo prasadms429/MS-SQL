@@ -12,3 +12,10 @@ firstname nvarchar(50) not null,
 dateofbirth datetime not null,
 dateofjoining datetime 
 );
+
+create table Courses (
+CourseId int identity(1,1) primary key not null,
+CourseName nvarchar(50) not null,
+NumberOfCredits int,
+CourseCode nvarchar(5) not null  --Example: CS201
+);
