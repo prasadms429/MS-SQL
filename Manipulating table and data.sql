@@ -35,7 +35,7 @@ select * from Students;   -- It displays all rows and columms
 select firstname as 'First Name',lastname [Last Name],dateofbirth [Date of Birth] from Students;    -- In this we specify which column to display and which column to not. we can change title of the column using 'as' and [].
 
 
--- Advanced Select queries
+-- ADVANCED SELECT QUERIES
 SELECT * FROM school.dbo.Courses   -- Without using "use school" for selecting database, we can directly use this command.
 
 SELECT lastname, firstname, dateofbirth
@@ -53,3 +53,23 @@ WHERE NumberOfCredits>2;
 -- Select Courses with the number of credits 3 and less
 SELECT * FROM school.dbo.Courses
 WHERE NumberOfCredits<=3;
+
+
+--UPDATING DATA IN TABLE
+--Update all enrollment dates that are empty (null)
+--Update specific records using a condition
+select * from school.dbo.Students;
+update Students set dateofjoining='2022-04-23'
+where dateofjoining is null;
+
+--Update all enrollment dates
+--Update multiple records (be careful)
+update Students set dateofjoining='2022-04-20'
+
+--Update students with ids 2 & 3. Change first and last names
+--Update multiple columns
+update Students set firstname='Tajee', lastname='McDermott'
+where id=2
+
+update Students set firstname='Rhoddy', lastname='Shawn'
+where id=3
