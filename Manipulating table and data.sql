@@ -73,3 +73,14 @@ where id=2
 
 update Students set firstname='Rhoddy', lastname='Shawn'
 where id=3
+
+
+--DELETING DATA FROM THE TABLE USING AN SQL SCRIPT
+--Delete student with id 8
+delete from Students where id=8
+
+--Delete student named Rhoddy Shawn
+delete from Students where firstname='Rhoddy' and lastname='Shawn'
+
+--Delete all students with names containning the word 'student'
+delete from Students where firstname like '%student%' or lastname like '%student%'  -- "% %" This is called wild character which looks for the specific word in the first name and last name and deletes that
