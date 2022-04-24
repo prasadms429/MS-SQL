@@ -14,7 +14,7 @@
   group by [TeacherId],[StudentId],s.firstname,s.lastname,t.firstname,t.lastname    -- Group by is used to do some mathematical operations.
   
   
-  -- SQL AVERAGE AGGREGATE FUNCTION
+ -- SQL AVERAGE AGGREGATE FUNCTION
  use school;
 select CourseId,avg(Grade) from Enrollments
 --where CourseId=2 		-- If use this then it prints for specific id, otherwise it prints for all ids
