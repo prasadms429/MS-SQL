@@ -21,3 +21,16 @@ select CourseId,avg(Grade) from Enrollments
 group by CourseId		-- By using group by CourseId it calculates average values by grouping common ids. For all different course ids.
 having avg(Grade)>=70		-- If we want to apply aggregate function for specific condition then we use 'having' keyword.
 order by avg(grade)		-- To print average values of grade in asending order we use this.
+
+
+-- SQL COUNT AGGREGATE FUNCTION
+
+-- Bring back the number of student enrolled per course
+select CourseId, count(StudentId) from Enrollments
+group by CourseId
+
+or
+
+select c.CourseId [Course Id],c.CourseName [Course Name], count(StudentId) from Enrollments e	-- To display in more detailed way with modified column names
+inner join Courses c on c.CourseId = e.CourseId
+group by c.CourseId, c.CourseName
