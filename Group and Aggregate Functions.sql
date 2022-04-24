@@ -29,7 +29,7 @@ order by avg(grade)		-- To print average values of grade in asending order we us
 select CourseId, count(StudentId) from Enrollments
 group by CourseId
 
--- another method
+-- or
 
 select c.CourseId [Course Id],c.CourseName [Course Name], count(StudentId) from Enrollments e	-- To display in more detailed way with modified column names
 inner join Courses c on c.CourseId = e.CourseId
