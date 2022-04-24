@@ -41,3 +41,12 @@ group by c.CourseId, c.CourseName
 select CourseId, max(Grade), min(Grade) from Enrollments
 where Grade is not null
 group by CourseId						-- To all Course Id it gives min and max values.
+
+
+-- SQL SUM AGGREGATE FUNCTION
+-- Bring back the total number of credits that each student is doing
+select sum(c.NumberOfCredits) [Number of Credits], s.firstname+' '+s.lastname [Student Name] 
+from Enrollments e
+inner join Courses c on c.CourseId = e.CourseId
+inner join Students s on s.id=e.StudentId
+Group by s.firstname,s.lastname
