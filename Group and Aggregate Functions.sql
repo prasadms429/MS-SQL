@@ -34,3 +34,10 @@ group by CourseId
 select c.CourseId [Course Id],c.CourseName [Course Name], count(StudentId) from Enrollments e	-- To display in more detailed way with modified column names
 inner join Courses c on c.CourseId = e.CourseId
 group by c.CourseId, c.CourseName
+
+
+-- SQL MAX AND MIN AGGREGATE FUNCTIONS
+-- Bring back the highest and lowest grade for each course
+select CourseId, max(Grade), min(Grade) from Enrollments
+where Grade is not null
+group by CourseId						-- To all Course Id it gives min and max values.
