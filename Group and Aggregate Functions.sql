@@ -3,10 +3,10 @@
  select distinct TeacherId, CourseId from Enrollments   -- To select reduce repeated rows that contains same value in rows in a selected columns, we use this.
  
  SELECT TOP (1000) 
-	   [TeacherId]
-      ,[StudentId],
-	  s.firstname+' '+s.lastname [Student Name],
-	  t.firstname+' '+t.lastname [Teacher Name]
+	[TeacherId]
+      	,[StudentId],
+	 s.firstname+' '+s.lastname [Student Name],
+	 t.firstname+' '+t.lastname [Teacher Name]
   FROM [school].[dbo].[Enrollments]
   inner join Teachers t on t.id=TeacherId
   inner join Students s on s.id=StudentId
