@@ -82,7 +82,7 @@ BEGIN
 END
 
 
--- To getCourseTileById
+-- Function description for getCourseTileById
 USE [school]
 GO
 /****** Object:  UserDefinedFunction [dbo].[getCourseTitleById]    Script Date: 25-04-2022 17:16:17 ******/
