@@ -50,7 +50,7 @@ END
 GO
 
 
---To trigger delete from all table, if we delete specific studentid from student table then all rows assosiated with that id from all table like enrollemts table, gets deleted.
+-- To trigger delete from all table, if we delete specific studentid from student table then all rows assosiated with that id from all table like enrollemts table, gets deleted.
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -74,6 +74,6 @@ BEGIN
 	select @stuid=id from deleted;
 
 	DELETE from Enrollments where StudentId=@stuid
-
+	
 END
 GO
