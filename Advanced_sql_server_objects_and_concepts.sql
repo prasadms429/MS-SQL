@@ -163,3 +163,71 @@ RETURN
 	where Grade between @firstGrade AND @secondGrade
 )
 GO
+
+
+
+-- MULTI STATEMENT TABLE-VALUED FUNCTIONS  ( It writes the all values of multiple table in one table by row by row, not by column by column. Column by column is usually performed using join.
+use school;
+
+select * from [dbo].[allPersons]()
+
+--Function description for multi-table valued function 'allPerson()'
+-- ================================================
+-- Template generated from Template Explorer using:
+-- Create Multi-Statement Function (New Menu).SQL
+--
+-- Use the Specify Values for Template Parameters 
+-- command (Ctrl-Shift-M) to fill in the parameter 
+-- values below.
+--
+-- This block of comments will not be included in
+-- the definition of the function.
+-- ================================================
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+CREATE FUNCTION allPersons 
+(
+	-- Add the parameters for the function here
+	
+)
+RETURNS 
+@Persons TABLE 
+(
+	-- Add the column definitions for the TABLE variable here
+	firstName nvarchar(50), 
+	LastName nvarchar(50),
+	dateOfJoined datetime,
+	personnel_type nvarchar(50)
+)
+AS
+BEGIN
+	-- Fill the table variable with the rows for your result set
+	insert into @Persons
+	select
+	[firstname],
+	[lastname],
+	[enrollmentdate],
+	'Student'
+	from Students
+
+	insert into @Persons
+	select
+	[firstname],
+	[lastname],
+	[DateJoined],
+	'Teacher'
+	from Teachers
+
+	
+	RETURN 
+END
+GO
+
+
