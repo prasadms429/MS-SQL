@@ -1,4 +1,4 @@
--- Stored procedures is to perform some intelligent tasks.
+-- Stored procedures is to perform some intelligent tasks. and it  is used to write repeated code under one procedure for some operation. Whereas Functions perform Airthmatic or mathamatical operations on data in SQL.
 
 -- To select all students using stored procedure
 use school;
