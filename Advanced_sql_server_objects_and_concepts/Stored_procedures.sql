@@ -144,5 +144,4 @@ END
 use school;
 DECLARE @StudentId int
 exec [dbo].[InsertStudent] 'O D','Kaju','1999-05-18', @StudentId OUTPUT
-
 exec [dbo].[SelectStudentById] @id = @StudentId
